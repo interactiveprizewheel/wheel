@@ -31,6 +31,24 @@ lib.ssMetadata = [];
 p.nominalBounds = new cjs.Rectangle(0,0,1920,1080);
 
 
+(lib.btn1 = function() {
+	this.initialize(img.btn1);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,901,241);
+
+
+(lib.btn2 = function() {
+	this.initialize(img.btn2);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,901,241);
+
+
+(lib.btn3 = function() {
+	this.initialize(img.btn3);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,901,241);
+
+
 (lib.Logo = function() {
 	this.initialize(img.Logo);
 }).prototype = p = new cjs.Bitmap();
@@ -103,6 +121,18 @@ if (reversed == null) { reversed = false; }
 	props.loop = loop;
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
+
+	// Buttons
+	this.instance = new lib.btn2();
+	this.instance.setTransform(-336,-116);
+
+	this.instance_1 = new lib.btn1();
+	this.instance_1.setTransform(-336,-116);
+
+	this.instance_2 = new lib.btn3();
+	this.instance_2.setTransform(-336,-116);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_2}]},1).to({state:[{t:this.instance}]},1).wait(1));
 
 	// Layer_2
 	this.shape = new cjs.Shape();
@@ -241,19 +271,27 @@ if (reversed == null) { reversed = false; }
 
 	// Layer_1
 	this.shape_33 = new cjs.Shape();
-	this.shape_33.graphics.f().s("rgba(0,0,0,0)").ss(1,1,1).p("EgrWgQ7MBWtAAAQHBAAE8E9QE/E9AAHBIAAAAQAAHCk/E8Qk8E+nBAAMhWtAAAQnBAAk+k+Qk9k8AAnCIAAAAQAAnBE9k9QE+k9HBAAg");
+	this.shape_33.graphics.f().s("rgba(0,0,0,0)").ss(1,1,1).p("Eg8AgDLQA5lADyjzQE+k9HBAAMBWtAAAQGfAAEuEPQAZAWAXAYQE/E9AAHBIAAAAQAAHCk/E8QgXAYgZAWQkuEQmfAAMhWtAAAQnBAAk+k+Qjyjyg5lAQgShiAAhqIAAAAQAAhpAShig");
 	this.shape_33.setTransform(49.35,18.275);
 
 	this.shape_34 = new cjs.Shape();
-	this.shape_34.graphics.f("#FFFFFF").s().p("EgrVAQ8QnCAAk+k+Qk8k8gBnCIAAAAQABnBE8k9QE+k9HCAAMBWrAAAQHCAAE8E9QE/E9AAHBIAAAAQAAHCk/E8Qk8E+nCAAg");
+	this.shape_34.graphics.f("#FFFFFF").s().p("EgrVAQ8QnCAAk+k+Qjyjyg5lAIAAmXQA5lADyjzQE+k9HCAAMBWrAAAQGgAAEuEPQAZAWAXAYQE/E9AAHBIAAAAQAAHCk/E8QgXAYgZAWQkuEQmgAAgEg8SAAAIAAAAQAAhpAShiIAAGXQgShiAAhqgEg8AgDLg");
 	this.shape_34.setTransform(49.35,18.275);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_34},{t:this.shape_33}]}).to({state:[{t:this.shape_34},{t:this.shape_33}]},1).to({state:[{t:this.shape_34},{t:this.shape_33}]},1).to({state:[{t:this.shape_34},{t:this.shape_33}]},1).wait(1));
+	this.shape_35 = new cjs.Shape();
+	this.shape_35.graphics.f().s("rgba(0,0,0,0)").ss(1,1,1).p("EgrWgQ7MBWtAAAQHBAAE8E9QE/E9AAHBIAAAAQAAHCk/E8Qk8E+nBAAMhWtAAAQnBAAk+k+Qk9k8AAnCIAAAAQAAnBE9k9QE+k9HBAAg");
+	this.shape_35.setTransform(49.35,18.275);
+
+	this.shape_36 = new cjs.Shape();
+	this.shape_36.graphics.f("#FFFFFF").s().p("EgrVAQ8QnCAAk+k+Qk8k8gBnCIAAAAQABnBE8k9QE+k9HCAAMBWrAAAQHCAAE8E9QE/E9AAHBIAAAAQAAHCk/E8Qk8E+nCAAg");
+	this.shape_36.setTransform(49.35,18.275);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_34},{t:this.shape_33}]}).to({state:[{t:this.shape_36},{t:this.shape_35}]},1).to({state:[{t:this.shape_36},{t:this.shape_35}]},1).to({state:[{t:this.shape_36},{t:this.shape_35}]},1).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-337.5,-91.1,773.7,218.8);
+p.nominalBounds = new cjs.Rectangle(-337.5,-116,902.5,243.7);
 
 
 (lib.Scene_1_Logo = function(mode,startPosition,loop,reversed) {
@@ -497,7 +535,7 @@ if (reversed == null) { reversed = false; }
 	// Button_obj_
 	this.Button = new lib.Scene_1_Button();
 	this.Button.name = "Button";
-	this.Button.setTransform(1617.4,546.5,1,1,0,0,0,1617.4,546.5);
+	this.Button.setTransform(1648,540.5,1,1,0,0,0,1648,540.5);
 	this.Button.depth = 0;
 	this.Button.isAttachedToCamera = 0
 	this.Button.isAttachedToMask = 0
@@ -559,11 +597,14 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"BG_wide.jpg?1758534750074", id:"BG_wide"},
-		{src:"Logo.png?1758534750074", id:"Logo"},
-		{src:"Pointer.png?1758534750074", id:"Pointer"},
-		{src:"Stand.png?1758534750074", id:"Stand"},
-		{src:"Wheel.png?1758534750074", id:"Wheel"}
+		{src:"BG_wide.jpg", id:"BG_wide"},
+		{src:"btn1.png", id:"btn1"},
+		{src:"btn2.png", id:"btn2"},
+		{src:"btn3.png", id:"btn3"},
+		{src:"Logo.png", id:"Logo"},
+		{src:"Pointer.png", id:"Pointer"},
+		{src:"Stand.png", id:"Stand"},
+		{src:"Wheel.png", id:"Wheel"}
 	],
 	preloads: []
 };
