@@ -22,14 +22,14 @@
   }
 </style>
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-<script src="index.js?1758876689947"></script>
+<script src="index.js"></script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
 	canvas = document.getElementById("canvas");
 	anim_container = document.getElementById("animation_container");
 	dom_overlay_container = document.getElementById("dom_overlay_container");
-	var comp=AdobeAn.getComposition("572D4C36901FD54CA78979356D1B860F");
+	var comp=AdobeAn.getComposition("DCD7B6583EB752449E6C7F41856210E9");
 	var lib=comp.getLibrary();
 	var loader = new createjs.LoadQueue(false);
 	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
@@ -61,6 +61,7 @@ function handleComplete(evt,comp) {
 		stage.addChild(exportRoot);
 		createjs.Ticker.framerate = lib.properties.fps;
 		createjs.Ticker.addEventListener("tick", stage);
+		stage.addEventListener("tick", stage._handleTick);
 	}	    
 	//Code to support hidpi screens and responsive scaling.
 	AdobeAn.makeResponsive(true,'both',true,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
@@ -71,11 +72,11 @@ function handleComplete(evt,comp) {
 <!-- write your code here -->
 </head>
 <body onload="init();" style="margin:0px;">
-	<div id="animation_container" style="background-color:rgba(51, 51, 204, 1.00); width:1080px; height:1920px">
-		<canvas id="canvas" width="1080" height="1920" style="position: absolute; display: none; background-color:rgba(51, 51, 204, 1.00);"></canvas>
-		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1080px; height:1920px; position: absolute; left: 0px; top: 0px; display: none;">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
+		<canvas id="canvas" width="1920" height="1080" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1080px; position: absolute; left: 0px; top: 0px; display: none;">
 		</div>
 	</div>
-    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:1920px; width: 1080px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=_preloader.gif?1758876689947 style='vertical-align: middle; max-height: 100%'/></div>
+    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:1080px; width: 1920px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
 </body>
 </html>
